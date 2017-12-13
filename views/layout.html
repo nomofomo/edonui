@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>Edon|Node</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no" />
+  	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  	<meta name="robots" content="all,follow" />
+    <meta name="description" content="fullerNode">
+    <meta name="author" content="Satoshi Nomofomo">
+    <!-- jQuery -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/js/metisMenu.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/default.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- MetisMenu CSS -->
+    <link href="/css/metisMenu.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/css/default.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,700&subset=latin,latin-ext" />
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+    <style>
+    .fa-caret-down{
+      color: black;
+    }
+    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    @{import('meta', 'head','favicon.ico')}
+  </head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Edon|Node</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right" >
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <img src="img/btc_icon.png" style="height:42px;">&nbsp; <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-btc">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <span id="btc_status"><strong style="color:red;">OFFLINE</strong></span>
+                                    <span class="pull-right text-muted">
+                                        <em>node uptime</em>
+                                    </span>
+                                </div>
+                                <div><button class="btn btn-default" onclick="console.log('woohoo');">Start</button></div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#extblkexp">
+                                <div>
+                                    <strong>Block Count</strong>
+                                    <span class="pull-right text-muted">
+                                        <em>&nbsp;</em>
+                                    </span>
+                                </div>
+                                <div>
+                                  <span class="pull-left"><em>Local</em></span><span class="pull-right"><em>External</em></span><hr>
+                                  <span class="pull-left" id="btc_lcl_blk_cnt">Local</span><span class="pull-right" id="btc_ext_blk_cnt">External</span>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <img src="img/ltc_icon.png" style="height:36px;">&nbsp; <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-ltc">
+
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <img src="img/doge_icon.png" style="height:36px;">&nbsp; <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-doge">
+
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <img src="img/grc_icon.png" style="height:36px;">&nbsp; <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-grc">
+
+
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <img src="img/blk_icon.png" style="height:36px;">&nbsp; <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-blk">
+
+
+                    </ul>
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+												<li>
+                            <a href="#"><i class="fa fa-clock fa-fw"></i> <span id="currentTime">00:00:00</span><span class="fa fa-angle-down"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li><img class="img-responsive" src="https://imgs.xkcd.com/comics/now.png" /><a href="https://xkcd.com/1335/" target="_blank">Now:<br> <small><em>(click for full size)</em></small></a></li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-info-circle fa-fw"></i> System Info<span class="fa fa-angle-down"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                  <table class="table table-hover">
+                								    <tbody>
+                								      <tr>
+                								        <td>Uptime: </td>
+                								        <td id="uptime-disp">000000</td>
+                								      </tr>
+                								      <tr>
+                								        <td>Hostname: </td>
+                								        <td id="hostname-disp">XXXXX</td>
+                								      </tr>
+                								      <tr>
+                								        <td>Platform: </td>
+                								        <td id="platform-disp">XXXXX</td>
+                								      </tr>
+                											<tr>
+                								        <td>Distro: </td>
+                								        <td id="distro-disp">XXXXX</td>
+                								      </tr>
+                											<tr>
+                								        <td>Kernel: </td>
+                								        <td id="kernel-disp">XXXXX</td>
+                								      </tr>
+                											<tr>
+                								        <td>Arch: </td>
+                								        <td id="arch-disp">XXXXX</td>
+                								      </tr>
+                								    </tbody>
+                								  </table>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-hdd fa-fw"></i> Storage<span class="fa fa-angle-down"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                  <table class="table table-hover"><tbody id="storage-disp">
+                                  <tr id="storagespin"><td><i class="fa fa-circle-notch fa-spin"></i><td></tr>
+                                  </tbody></table>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-microchip fa-fw"></i> Memory<span class="fa fa-angle-down"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                  <table class="table table-hover"><tbody id="mem-disp">
+                                  <tr id="memspin"><td><i class="fa fa-circle-notch fa-spin"></i><td></tr>
+                                  </tbody></table>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-cloud fa-fw"></i> Network<span class="fa fa-angle-down"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                  <table class="table table-hover"><tbody id="net-disp">
+                                  <tr id="netspin"><td><i class="fa fa-circle-notch fa-spin"></i><td></tr>
+                                  </tbody></table>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-server fa-fw"></i> CPU<span class="fa fa-angle-down"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                  <table class="table table-hover"><tbody id="mem-disp">
+                                  <tr id="memspin"><td><i class="fa fa-circle-notch fa-spin"></i><td></tr>
+                                  </tbody></table>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div class="container" id="page-wrapper">
+          @{body}
+        </div>
+        <footer>
+          <div>&copy; 2018 All rights reserved.</div>
+          <div><small class="text-right"><em><a href="http://www.totaljs.com" target="_blank">Powered by Total.js</a></em></small></div>
+        </footer>
+
+    </div>
+    <!-- /#wrapper -->
+
+
+
+</body>
+
+</html>

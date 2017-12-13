@@ -1,0 +1,30 @@
+{
+  "name": "asimos",
+  "version": "1.0.0",
+  "description": "ASIMOS knows, does and shows",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/project_tardis/asimos.git"
+  },
+  "keywords": [
+    "projectTARDIS",
+    "asimos"
+  ],
+  "author": "Satoshi Nomofomo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/project_tardis/asimos/issues"
+  },
+  "homepage": "https://gitlab.com/project_tardis/asimos#README",
+  "dependencies": {
+    "get-json": "^1.0.0",
+    "mysql": "^2.15.0",
+    "systeminformation": "^3.33.8",
+    "total.js": "^2.9.0",
+    "twitter": "^1.7.1"
+  }
+}
